@@ -1,0 +1,82 @@
+<html>
+<head>
+<link rel="stylesheet" href="./styles/main.css">
+<title>Bulk Text Editor</title>
+</head>
+
+  <body>
+    <div id="panel">
+    <form name="mainForm" action="http://localhost:80/upload" onsubmit="return checkForm()" method="post" enctype="multipart/form-data">
+      <br>
+        <input name="rowsNum" id="rowsNum" value=1>
+        <table id="Phrases">
+        <th>Insert strings to perform text replacements</th>
+        <tr><td id="dev">Developer: Al Parillon (PORT:AL)</td></tr>
+        <tr><td id="howTo" onclick="displayHelp()">&gt;&gt;How It Works&lt;&lt;</td><td><input type="file" name="fileupload"></td><td><input id="sub" type="submit" value="SUBMIT"></td></tr>
+        <tr><td id="dev">Replace</td><td id="dev">With:</td><td></td></tr>
+        <tr><td><input name="replaceText0" class="textSections" id="replaceText0" value=""></td><td><input name="withText0" class="textSections" id="withText0" value=""></td><td><input type="button" id="add" value="ADD" onclick="addRow()"></td><td><input type="button" id="remove" value="DEL" onclick="delRow()"></td></tr>
+        </table>
+        <br>
+        <br>
+    </form>
+      </div>
+      <div id="help">
+      <div id="message">
+          <p id="close" onclick="noDisplayHelp()">&lt;&lt;CLOSE&gt;&gt;</p>
+          <h3 id="help-title">How it Works</h3>
+          <p>Click <b>Choose File</b> and pick a text based file (one that can be edited with Notepad), or a zip file containing multiple text based files at its root - i.e. no subfolders in zip allowed!</p>
+          <p>Once selected, add the text that you would like to replace and the text you would like to replace it with.</p>
+          <p>The program will update your text file(s) based on replacement pairs and will download automatically.</p>
+          <h3 id="help-title">Motivation</h3>
+          <p>I felt this was necessary as I am often tasked with adjusting scripts like configs in my own work. Basically, using the same templates with slightly different fields each time. That is especially true when performing migrations and having to edit file paths!</p>
+          <p>Having the ability to make multiple edits multiple times, improves my own productivity and reduces chances for error.</p>
+          <p>- Al Parillon (Port:Al)</p>
+          <br>
+          <p>&#174; 2023, All Rights Reserved</p>
+          </div>
+      
+      </div>
+  </body> 
+    <script>
+        let rows = 1;
+        function displayHelp(){
+            document.getElementById('help').style.display = "block";
+        }
+        function noDisplayHelp(){
+            document.getElementById('help').style.display = "none";
+        }
+        function addRow(){
+            var myContent = "<td><input name='replaceText"+rows+"' class='textSections' id='replaceText"+rows+"' value=''></td><td><input name='withText"+rows+"' class='textSections' id='withText"+rows+"' value=''></td><td><input type='button' id='add' value='ADD' onclick='addRow()'></td><td><input type='button' id='remove' value='DEL' onclick='delRow()'></td>";
+            var tableRef = document.getElementById('Phrases');
+            var newRow = tableRef.insertRow(tableRef.rows.length);
+            newRow.innerHTML = myContent;
+            rows++;
+            document.getElementById('rowsNum').value = rows;
+        }
+        function delRow(){
+            if(rows > 1){
+                var tableRef = document.getElementById('Phrases');
+                var newRow = tableRef.deleteRow(tableRef.rows.length - 1);
+                rows--;
+                document.getElementById('rowsNum').value = rows;
+            }
+        }
+        function checkForm(){
+            let filename = document.forms["mainForm"]["fileupload"].value;
+            if (filename === ""){
+                alert("You did not specify a file/zip. Click OK to return");
+                return false;
+            }
+                
+            for(let i = 0; i < rows; i++){
+                let repVal = document.forms["mainForm"]["replaceText"+i].value;
+                if (repVal === ""){
+                    alert("Replace fields cannot be blank. Click OK to return");
+                    return false;
+                }
+            }
+        }
+        //document.getElementById('replaceText').value = "MaryMary";
+        //document.getElementById('withText').value = "DICK";       
+    </script>
+</html>

@@ -1,0 +1,78 @@
+table{
+     border-radius: 25px;
+     border: 2px solid #73AD21;
+     background: #c4de40;
+     padding: 20px;
+} 
+
+#panel{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: auto;
+    width: 75%;
+    z-index: 0;
+}
+th, tr, td{
+        padding: 10px;
+        margin: auto;
+        border: none;
+        }
+th{
+    color:#73AD21;
+    font: 20px bold Tahoma, sans-serif;
+}
+.textSections{
+    width:300px;
+}
+#rowsNum{
+        display: none;
+        }
+#howTo{
+    color:#73AD21;
+    font: 15px italic Tahoma, sans-serif;
+}
+#dev{
+    color:#73AD21;
+    font: 10px bold "Arial Bold", sans-serif;
+    font-weight: bold;
+}
+#add,#remove,#sub{
+    background:#d6fa20;
+    color:#73AD21;
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 5px;
+}
+#help{
+    opacity:0.85;
+    background: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 100%;
+    display:none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+}
+#help-title{
+    color:#000000;
+    font: bold "Arial Bold", sans-serif;
+}
+
+p{
+    color:#000000;
+    font: 20px bold "Arial Bold", sans-serif
+}
+#message{
+    opacity:1;
+    background: beige;
+    border: 2px solid #ed0202;
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+    width: 50%;
+    height: 75%;
+}
