@@ -1,4 +1,5 @@
 let http = require('http');
+const app = require('./app');
 let formidable = require('formidable');
 let fs = require('fs');
 let Promises = require('fs').promises;
@@ -163,7 +164,8 @@ function clearArr(arr){
     while (arr.length) {arr.pop();}
 }
 
-http.createServer(function (req, res) {
+app.post('/upload', function (req, res){
+//http.createServer(function (req, res) {
 
   //Create an instance of the form object
   let form = new formidable.IncomingForm();
@@ -217,7 +219,9 @@ http.createServer(function (req, res) {
     
         
   });
-}).listen(PORT);
+});//.listen(PORT);
 
-
+app.listen(PORT, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
      

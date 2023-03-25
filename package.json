@@ -1,24 +1,24 @@
 {
     "name": "Bulk Text Editor",
     "version": "1.0.0",
-  "author": {
-      "name": "Al Parillon", 
-      "email": "alparillon@gmail.com",
-      "url": "http://alparillon.io"
-  },
-    
-    "scripts":{
+    "author": {
+        "name": "Al Parillon",
+        "email": "alparillon@gmail.com",
+        "url": "http://alparillon.io"
+    },
+    "scripts": {
         "start": "node ./bin/upload.js"
     },
-  "dependencies": {
-    "adm-zip": "^0.5.10",
-    "extract-zip": "^2.0.1",
-    "extract-zip-relative-path": "^2.0.4",
-    "file-saver": "^2.0.5",
-    "formidable": "^2.1.1",
-    "fs": "^0.0.1-security",
-    "jszip": "^3.10.1",
-    "os": "^0.1.2",
-    "path": "^0.12.7"
-  }  
+    "dependencies": {
+        "adm-zip": "^0.5.10",
+        "express": "^4.18.2",
+        "extract-zip": "^2.0.1",
+        "extract-zip-relative-path": "^2.0.4",
+        "file-saver": "^2.0.5",
+        "formidable": "^2.1.1",
+        "fs": "^0.0.1-security",
+        "jszip": "^3.10.1",
+        "os": "^0.1.2",
+        "path": "^0.12.7"
+    }
 }
