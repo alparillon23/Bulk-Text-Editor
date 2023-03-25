@@ -164,7 +164,7 @@ function clearArr(arr){
     while (arr.length) {arr.pop();}
 }
 
-app.post('/upload', function (req, res){
+app.post('/bin/upload', function (req, res){
 //http.createServer(function (req, res) {
 
   //Create an instance of the form object
