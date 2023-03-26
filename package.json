@@ -7,7 +7,7 @@
         "url": "http://alparillon.io"
     },
     "scripts": {
-        "start": "node ./bin/upload.js"
+        "start": "node app.js"
     },
     "dependencies": {
         "adm-zip": "^0.5.10",
