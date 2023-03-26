@@ -1,5 +1,5 @@
 let http = require('http');
-const app = require('../app');
+const app = require('./app');
 let formidable = require('formidable');
 let fs = require('fs');
 let Promises = require('fs').promises;
@@ -8,7 +8,7 @@ let os = require('os');
 let path = require('path');
 let date = "00";
 let emptyField = false;
-let PORT = process.env.PORT || 80;
+let PORT = process.env.PORT || 3000;
 let basepath = '../temp/';
 const replaceText = [];
 const withText = [];
@@ -164,9 +164,7 @@ function clearArr(arr){
     while (arr.length) {arr.pop();}
 }
 
-app.post('./bin/upload', function (req, res){
-//http.createServer(function (req, res) {
-
+app.post('/', function (req, res){
   //Create an instance of the form object
   let form = new formidable.IncomingForm();
   
@@ -215,11 +213,9 @@ app.post('./bin/upload', function (req, res){
             }  
       }
     }
-    });
-    
-        
+    });    
   });
-});//.listen(PORT);
+});
 
 app.listen(PORT, () => {
   console.log(`Example app listening at http://localhost:${PORT}`)
