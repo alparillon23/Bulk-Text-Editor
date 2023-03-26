@@ -22,3 +22,5 @@
 <li>([Replace: "advark"; With: "anteater"] will replace every iteration of "advark" with "anteater" in the file)</li>
 <li>Hit Submit and You will receive the new zip with all the files with their changes</li>
 </ul>
+
+Developed by Al Parillon (PORT:AL) for increased productivity
