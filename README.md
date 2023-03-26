@@ -1,5 +1,5 @@
 # Bulk Text Editor
- Allows multiple edits on text files. Hosted on Render <a href="https://bulk-text-editor-23.onrender.com">site</a>
+ Allows multiple edits on text files. <a href="https://bulk-text-editor-23.onrender.com">Deployed on Render</a>
 
 
 # How to Use
