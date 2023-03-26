@@ -222,6 +222,6 @@ app.post('./bin/upload', function (req, res){
 });//.listen(PORT);
 
 app.listen(PORT, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Example app listening at http://localhost:${PORT}`)
 })
      
