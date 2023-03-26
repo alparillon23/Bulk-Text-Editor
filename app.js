@@ -22,7 +22,7 @@ var options = {
   maxAge: '1m',
   redirect: false
 }
-app.use(express.static(path.join(__dirname,''), options))
+app.use(express.static('public', options))
 
 // #############################################################################
 // Catch all handler for all other request.

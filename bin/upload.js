@@ -1,5 +1,5 @@
 let http = require('http');
-const app = require('./app');
+const app = require('../app');
 let formidable = require('formidable');
 let fs = require('fs');
 let Promises = require('fs').promises;
@@ -164,7 +164,7 @@ function clearArr(arr){
     while (arr.length) {arr.pop();}
 }
 
-app.post('/bin/upload', function (req, res){
+app.post('./bin/upload', function (req, res){
 //http.createServer(function (req, res) {
 
   //Create an instance of the form object
